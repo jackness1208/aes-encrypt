@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "main": "output/index.js",
+  "module": "output/index.esm.js",
+  "types": "output/index.d.ts",
+  "eslintConfig": {
+    "env": {
+      "jest": true
+    },
+    "extends": [
+      "yyl-react"
+    ]
+  },
+  "eslintIgnore": [
+    "/node_modules",
+    "/output",
+    "/test"
+  ],
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "trailingComma": "none",
+    "printWidth": 100
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "scripts": {
+    "eslint": "eslint --ext=jsx,ts,tsx ./",
+    "prettier": "prettier --write ./**",
+    "dev": "rollup --config ./rollup.config.js",
+    "d": "rollup --config ./rollup.config.js",
+    "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
+    "w": "rollup --watch --config ./rollup.config.js",
+    "clear": "rimraf ./output",
+    "release": "yyr",
+    "prepublishOnly": "npm run prettier & npm run build",
+    "test": "jest ./test"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.23.1",
+    "eslint-config-yyl-react": "^2.0.0",
+    "jest": "^29.0.3",
+    "prettier": "^2.7.1",
+    "rollup": "^2.38.2",
+    "rollup-plugin-node-externals": "^5.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.0",
+    "ts-jest": "^29.0.1",
+    "typescript": "^4.8.3"
+  },
+  "name": "aes-encrypt",
+  "repository": "https://github.com/jackness1208/aes-encrypt.git",
+  "author": "liudaojie <liudaojie@yy.com>",
+  "license": "MIT"
+}
